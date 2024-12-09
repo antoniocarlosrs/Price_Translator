@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Comparador de Preço</title>
 </head>
 <body>
-    
+    <main class="container">
+        <h1>Comparador de Preços</h1>
+
+        <form class="search-form">
+            <input type="text" placeholder="Nome do Produto">
+            <button>Bucar</button>
+        </form>
+
+        <div class="product_list"></div>
+        <canvas class="price-chart"></canvas>
+    </main>
+
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
