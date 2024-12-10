@@ -17,16 +17,17 @@ function productsDisplay(products){
     console.log(products)
     productList.innerHTML = products.map(product => `
             <div class="product-card">
-                <img src="${product.thumbnail}" alt="${product.title}">
+                <img src="${product.thumbnail.replace(/\w\.jpg/gi, 'W.jpg')}" alt="${product.title}">
                 <h3>${product.title}</h3>
-                <p>${product.price.toLocaleString('pt-br', {
+                <p class="product-price">${product.price.toLocaleString('pt-br', {
                     style: "currency",
                     currency: "BRL"
                 })}</p>
-                <p>Loja: ${product.seller.nickname}</p>
+                <p class="produtc-store">Loja: ${product.seller.nickname}</p>
             </div>
         `).join('')
 }
 
+// Regex, replace(/\w\.jpg/gi, 'W.jpg')
 
 
