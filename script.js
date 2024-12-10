@@ -1,5 +1,9 @@
 const searchForm = document.querySelector(".search-form");
 const productList = document.querySelector('.product_list')
+const priceChart = document.querySelector('price-chart')
+
+//Variável para guardar os gráficos
+let myChart = ''
 
 searchForm.addEventListener("submit", async function (event) {
   event.preventDefault(); //Previne que a pagina seja reiniciada
@@ -10,6 +14,7 @@ searchForm.addEventListener("submit", async function (event) {
     const products = (await data.json()).results.slice(0, 10) // Trazer os 10 primeiros
 
     productsDisplay(products)
+    updatePriceChart(products)
 });
 
 //Colocar os produtos na Tela
@@ -27,7 +32,13 @@ function productsDisplay(products){
             </div>
         `).join('')
 }
-
 // Regex, replace(/\w\.jpg/gi, 'W.jpg')
+
+// Função para o gráfico
+
+function updatePriceChart(products){
+    const ctx = priceChart.getContext('2d')
+    
+}
 
 
